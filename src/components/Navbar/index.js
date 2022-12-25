@@ -1,72 +1,44 @@
-import React, { useState } from "react";
-
-import { KeyboardArrowDown, Menu as MenuIcon } from "@mui/icons-material";
-import {
-	Link,
-	Container,
-	Box,
-	InputBase,
-	MenuItem,
-	Button,
-	Menu,
-} from "@mui/material";
+import { Box, Container, Grid, Link, Typography } from '@mui/material'
+import { Menu } from '@mui/icons-material'
+import { Stack } from '@mui/system';
 
 export default function Navbar() {
-	const [openCurrency, setCurrency] = useState(false);
-	return (
+    const mentuItem = [
+		{ name: "Home", to: "/" },
+		{ name: "Shop", to: "/shop" },
+		{ name: "Pages", to: "/pages" },
+		{ name: "About", to: "/about" },
+		{ name: "blog", to: "/blog" },
+		{ name: "Contact", to: "/contact" },
+	];
+  return (
 		<>
-			<Container maxWidth="lg">
-				<Box display="flex">
-					<Box>
-						<Link to="/">
-							<img src="https://new.axilthemes.com/demo/template/etrade/assets/images/logo/logo.png" />
-						</Link>
-					</Box>
+			<Box sx={{ background: "#ddd", minHeigh: "40px" }}>
+				<Container>
+					<Grid container>
+						<Grid item sx={{ md: "3", sm: "12", xs: "12" }}>
+							<Box>
+								<Menu />
+								<Typography variant="span">Category</Typography>
+							</Box>
+						</Grid>
 
-					<Box>
-						<InputBase
-							placeholder="Search…"
-							inputProps={{ "aria-label": "search" }}
-							sx={{ color: "black" }}
-							name="search"
-						/>
-						{/* <MenuIcon /> */}
-					</Box>
+						<Grid item sx={{ md: "3", sm: "12", xs: "12" }}>
+							<Stack direction="row" spacing={4}>
+								{mentuItem.map((item, index) => (
+									// <Link to={item.to}>
+										<Typography variant="p">
+											{item.name}
+										</Typography>
+									// </Link>
+								))}
+							</Stack>
+						</Grid>
 
-					<Box>
-						<Button
-							id="demo-customized-button"
-							aria-haspopup="true"
-							variant="outlined"
-							disableElevation
-							onClick={() => setCurrency(true)}
-							endIcon={<KeyboardArrowDown />}
-						>
-							USD
-						</Button>
-						<Menu
-							id="basic-menu"
-							open={openCurrency}
-							onClose={() => setCurrency(!openCurrency)}
-							MenuListProps={{
-								"aria-labelledby": "basic-button",
-							}}
-							transformOrigin={{
-								vertical: "bottom",
-								horizontal: "right",
-							}}
-							anchorOrigin={{
-								vertical: "bottom",
-								horizontal: "right",
-							}}
-						>
-							<MenuItem disableRipple>USD</MenuItem>
-							<MenuItem disableRipple>AUD</MenuItem>
-							<MenuItem disableRipple>EUR</MenuItem>
-						</Menu>
-					</Box>
-				</Box>
-			</Container>
+						<Grid item sx={{ md: "3", sm: "12", xs: "12" }}></Grid>
+					</Grid>
+				</Container>
+			</Box>
 		</>
-	);
+  );
 }
