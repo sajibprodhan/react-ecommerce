@@ -1,6 +1,12 @@
-import { Box, Container, Grid, Link, Typography } from '@mui/material'
-import { Menu } from '@mui/icons-material'
-import { Stack } from '@mui/system';
+import { Box, Container, Typography, Stack, List, ListItemButton, ListItemIcon, Badge, Button } from "@mui/material";
+import {
+	FavoriteBorder,
+	KeyboardArrowDown,
+	Menu,
+	PersonOutline,
+	Search,
+	ShoppingCart,
+} from "@mui/icons-material";
 
 export default function Navbar() {
     const mentuItem = [
@@ -13,30 +19,59 @@ export default function Navbar() {
 	];
   return (
 		<>
-			<Box sx={{ background: "#ddd", minHeigh: "40px" }}>
+			<Box
+				sx={{
+					background: "#ddd",
+					minHeight: "40px",
+					display: "flex",
+
+					justifyContent: "space-between",
+				}}
+			>
 				<Container>
-					<Grid container>
-						<Grid item sx={{ md: "3", sm: "12", xs: "12" }}>
-							<Box>
-								<Menu />
-								<Typography variant="span">Category</Typography>
-							</Box>
-						</Grid>
+					<Stack direction="row" justifyContent="space-between">
+						<Box>
+							<Button
+								sx={{
+									background: "#3577f0",
+									padding: 2,
+								  	color: "#fff",
+									borderRadius: 0
+								}}
+								startIcon={<Menu />}
+							>
+								Category
+							</Button>
+						</Box>
 
-						<Grid item sx={{ md: "3", sm: "12", xs: "12" }}>
-							<Stack direction="row" spacing={4}>
-								{mentuItem.map((item, index) => (
-									// <Link to={item.to}>
-										<Typography variant="p">
-											{item.name}
-										</Typography>
-									// </Link>
-								))}
-							</Stack>
-						</Grid>
+						<Stack alignItems="center" direction="row" spacing={4}>
+							{mentuItem.map((item, index) => (
+								// <Link to={item.to}>
+								<Typography
+									variant="span"
+									display="flex"
+									alignItem="center"
+								>
+									{item.name}
+									<KeyboardArrowDown />
+								</Typography>
+								// </Link>
+							))}
+						</Stack>
 
-						<Grid item sx={{ md: "3", sm: "12", xs: "12" }}></Grid>
-					</Grid>
+						<Stack
+							direction="row"
+							spacing={2}
+							color="blue"
+							alignItems="center"
+						>
+							<FavoriteBorder />
+							<Badge badgeContent={4} color="primary">
+								<ShoppingCart color="action" />
+							</Badge>
+							<PersonOutline />
+						</Stack>
+					</Stack>
 				</Container>
 			</Box>
 		</>
