@@ -20,20 +20,20 @@ export default function Topbar() {
 		<>
 			<Container>
 				<Grid container alignItems="center" padding="30px 0">
-					<Grid item lg={3} sm={12}>
+					<Grid item lg={3} md={3} sm={12}>
 						<Link to="/">
 							<img src="https://new.axilthemes.com/demo/template/etrade/assets/images/logo/logo.png" />
 						</Link>
 					</Grid>
 
-					<Grid item lg={9} xs={12}>
+					<Grid item lg={9} md={9} xs={12}>
 						<Stack
 							direction="row"
 							spacing={3}
 							justifyContent="space-between"
 							alignItems="center"
 						>
-							<Box
+							<Box flex={1}
 								sx={{
 									border: "1px solid #ebe9e9",
 									padding: "3px 13px",

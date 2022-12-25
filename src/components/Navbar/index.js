@@ -24,7 +24,6 @@ export default function Navbar() {
 					background: "#ddd",
 					minHeight: "40px",
 					display: "flex",
-
 					justifyContent: "space-between",
 				}}
 			>
