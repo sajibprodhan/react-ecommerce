@@ -10,6 +10,7 @@ export default function Navbar() {
 		{ name: "About", to: "/about" },
 		{ name: "blog", to: "/blog" },
 		{ name: "Contact", to: "/contact" },
+		{ name: "About Us", to: "/about-us" },
 	];
   return (
 		<>
