@@ -1,10 +1,9 @@
-import { Box, Container, Typography, Stack, List, ListItemButton, ListItemIcon, Badge, Button } from "@mui/material";
+import { Box, Container, Typography, Stack, Badge, Button } from "@mui/material";
 import {
 	FavoriteBorder,
 	KeyboardArrowDown,
 	Menu,
 	PersonOutline,
-	Search,
 	ShoppingCart,
 } from "@mui/icons-material";
 
@@ -34,8 +33,8 @@ export default function Navbar() {
 								sx={{
 									background: "#3577f0",
 									padding: 2,
-								  	color: "#fff",
-									borderRadius: 0
+									color: "#fff",
+								  borderRadius: 0,
 								}}
 								startIcon={<Menu />}
 							>
@@ -52,7 +51,9 @@ export default function Navbar() {
 									alignItem="center"
 								>
 									{item.name}
-									<KeyboardArrowDown />
+									<KeyboardArrowDown
+										sx={{ fontSize: 18, color: "#a09c9c" }}
+									/>
 								</Typography>
 								// </Link>
 							))}
@@ -64,11 +65,11 @@ export default function Navbar() {
 							color="blue"
 							alignItems="center"
 						>
-							<FavoriteBorder />
+							<FavoriteBorder sx={{ color: "#939393" }} />
 							<Badge badgeContent={4} color="primary">
-								<ShoppingCart color="action" />
+								<ShoppingCart sx={{ color: "#939393" }} />
 							</Badge>
-							<PersonOutline />
+							<PersonOutline sx={{ color: "#939393" }} />
 						</Stack>
 					</Stack>
 				</Container>

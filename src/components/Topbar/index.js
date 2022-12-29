@@ -22,7 +22,7 @@ export default function Topbar() {
 				<Grid container alignItems="center" padding="30px 0">
 					<Grid item lg={3} md={3} sm={12}>
 						<Link to="/">
-							<img src="https://new.axilthemes.com/demo/template/etrade/assets/images/logo/logo.png" />
+							<img src="https://new.axilthemes.com/demo/template/etrade/assets/images/logo/logo.png" alt="Logo" />
 						</Link>
 					</Grid>
 
@@ -41,12 +41,13 @@ export default function Topbar() {
 									display: "flex",
 								}}
 							>
-								<Search sx={{ marginRight: "8px" }} />
+								<Search sx={{ marginRight: "8px" }} type="submit" />
 								<InputBase
 									placeholder="What are you lookin for.."
 									inputProps={{ "aria-label": "search" }}
 									sx={{ color: "#ddd" }}
 									name="search"
+									fullWidth="100%"
 								/>
 								<MenuIcon
 									sx={{
@@ -61,7 +62,7 @@ export default function Topbar() {
 
 							<Box>
                                 <Button
-                                    border="1px solid #ddd"
+									sx={{ border: "1px solid #ddd", color: "#666" }}
 									id="demo-customized-button"
 									aria-haspopup="true"
 									variant="outlined"
